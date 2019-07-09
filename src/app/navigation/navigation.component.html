@@ -1,0 +1,24 @@
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  <!--  <span><img src="./assets/devglan.png"></span> -->
+   <span class="example-fill-remaining-space"></span>
+  <div class="button-right">
+    <button class="md-warn" [routerLink]="'/about'">About</button>
+    <button class="md-warn" [routerLink]="'/contact'">Contact</button>
+</div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/home'">Home</a>
+      <a mat-list-item [routerLink]="'/lesson'">Lesson</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
